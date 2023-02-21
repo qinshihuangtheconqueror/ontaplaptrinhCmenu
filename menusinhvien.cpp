@@ -161,7 +161,24 @@ double dem = 0;
 
 }
 
+//cap nhat thong tin sinh vien theo ten
 
+void capnhatSV(SinhVien a[], char ten[], int n) {
+    int found = 0;
+    for(int i = 0; i < n; i++) {
+        if(strcmp(a[i].ten, ten)==0){
+            found = 1;
+            printf ("\n Xin moi cap nhat thong tin sinh vien:\n");
+            nhap(&a[i]);
+            break;
+        }
+    }
+
+    if (found == 0) {
+        printf("\n Sinh vien khong ton tai.\n");
+    }
+}
+    
 int main(){
  SinhVien a[1000];
  int n;
@@ -179,7 +196,8 @@ int main(){
  	printf("10.Duoi hoc theo diem.\n");
  	printf("11.Sap xep theo dia chi uu tien GPA\n");
 	printf("12.Tim cac ban sinh trong 1 thang.\n");
-	printf("13.Tinh diem trung binh:\n");
+	printf("13.Tinh diem trung binh.\n");
+	printf("14.Cap nhat thong tin sinh vien theo ten.\n");
 	printf("0- Thoat !\n");
  	printf("--------------------------------------------\n");
  	printf("Xin moi lua chon:");
@@ -261,6 +279,13 @@ int main(){
 else if(lc==13){
 	diemtb(a,n);
 	}
+else if(lc==14){
+	char ten1[100];
+	printf("Nhap ten sinh vien ban muon cap nhat: ");
+	scanf("%s", &ten1);
+	capnhatSV(a, ten1,n);
+	}
+
 
 	else if(lc==0){
     	printf("Cam on da su dung dich vu nay !");

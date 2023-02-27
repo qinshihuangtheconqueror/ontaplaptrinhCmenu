@@ -51,7 +51,7 @@ void nhap(diemsv *x){
 }
 
 void xuat(diemsv x){
-	printf("%-40s%-20.2f%-20.2f%-20.2f%-20c\n", x.tensv, x.diemqt, x.diemck, x.diemtk, x.diemxl);
+	printf("%-20s%-10.2f%-10.2f%-10.2f%-10c\n", x.tensv, x.diemqt, x.diemck, x.diemtk, x.diemxl);
 }
 void sort(diemsv a[], int n) {
     
@@ -67,19 +67,29 @@ void sort(diemsv a[], int n) {
     }
 }
 void sort1(diemsv a[], int n,int l) {
-    	printf("%-40s%-20s%-20s%-20s%-20s","Ten SV","Diem QT","Diem CK","Diem TK", "Xep loai");
+  int find=0;
     for(int i = 0;i < n;i++){
           if (abs(a[i].diemqt-a[i].diemck)>=l){
-          	xuat(a[i]);
+          printf("%-20s%-10s%-10s%-10s%-10s","Ten SV","Diem QT","Diem CK","Diem TK", "Xep loai");
+	     xuat(a[i]);
+	     find=1;
 		  }
+                    
             }
+    if(!find){
+      printf("Khong ton tai, tim lai !\n");
+    }
+    
         }
 int main(){
 	diemsv x[1000];
 int n;
 int cnt=0;
 int choice;
-do {
+ int tmp;
+ int l;
+ do {
+  
 printf("Student Menu\n");
 printf("1. Nhap\n");
 printf("2. In\n");
@@ -90,7 +100,7 @@ printf("Xin moi lua chon: ");
 scanf("%d",&choice);
 switch (choice){
 case 1:
-	int tmp;
+	
  		
             do{
                 printf("Nhap so luong hoc sinh: ");
@@ -127,7 +137,7 @@ case 1:
               break;
               
 	case 2:
-	printf("%-40s%-20s%-20s%-20s%-20s","Ten SV","Diem QT","Diem CK","Diem TK", "Xep loai");
+	printf("%-20s%-10s%-10s%-10s%-10s\n","Ten SV","Diem QT","Diem CK","Diem TK", "Xep loai");
 					 for(int i=0;i<cnt;i++)
                 {
                     
@@ -136,7 +146,7 @@ case 1:
 		
 	break;
 	case 3:
-   int l;
+  
    do{
             
 				printf("Nhap L: ");
@@ -166,6 +176,7 @@ printf("Invalid options, please enter between 1 and 6 !\n");
 }while (choice != 5);
 return 0;
 }
+
 
 
 

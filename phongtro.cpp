@@ -103,6 +103,7 @@ int choice;
  int c;
  int d;
  int k;
+int add_more;
 do {
 printf("Quan ly phong tro\n");
 printf("1. Nhap\n");
@@ -134,8 +135,17 @@ case 1:
 					}
                 
                 cnt=tmp;
-                    
-              break;
+                       do {
+                    printf("Ban muon nhap them tro khong ? (1=Yes, 0=No)\n ");
+                    scanf("%d", &add_more);
+                    getchar();
+                    if (add_more == 1) {
+                        nhap(&x[cnt]);
+                        cnt++;
+                    }
+                } while (add_more != 0);
+                break;
+              
               
 	case 2:
 	  printf("%-20s%-20s%-20s\n","Ten phong","Dien tich","Dieu Hoa");

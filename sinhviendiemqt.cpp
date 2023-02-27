@@ -144,7 +144,7 @@ case 1:
                     }
                 } while (add_more != 0);
                 break;
-              break;
+             
               
 	case 2:
 	printf("%-20s%-10s%-10s%-10s%-10s\n","Ten SV","Diem QT","Diem CK","Diem TK", "Xep loai");

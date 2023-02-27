@@ -13,6 +13,7 @@ char room[10];
 int day;
 char slot [7];
 int stt;
+	int add_more;
 };
 typedef struct TKB TKB;
 
@@ -110,6 +111,17 @@ int main(){
                     nhap(&a[i]);
                 }
                 cnt=tmp;
+		    do {
+                    printf("Ban muon nhap them tro khong ? (1=Yes, 0=No)\n ");
+                    scanf("%d", &add_more);
+                    getchar();
+                    if (add_more == 1) {
+                        nhap(&x[cnt]);
+                        cnt++;
+                    }
+                } while (add_more != 0);
+                
+              
             }
             
 	 else if(lc==2){

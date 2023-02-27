@@ -90,6 +90,7 @@ void sort(tro z[], int g) {
     }
   }
 }	   
+
 int main(){
 	tro  x[1000];
 int n;
@@ -97,6 +98,11 @@ int cnt=0;
 int choice;
  int tmp;
  int l;
+ int a;
+ int b;
+ int c;
+ int d;
+ int k;
 do {
 printf("Quan ly phong tro\n");
 printf("1. Nhap\n");
@@ -164,7 +170,26 @@ case 1:
 	   sort(x, cnt);
 		break;
 			case 5:
-	   
+	    for(k=0;k<cnt;k++){
+	    	if(x[k].dh==0){
+	    			if(x[k].dt<15){
+	    				a++;
+	    			}
+	    				else if(x[k].dt>15&&x[k].dt<22){
+                        b++;
+					}
+					else if(x[k].dt>22&&x[k].dt<30){
+                        c++;
+					}
+					else if(x[k].dt>30&&x[k].dt<40){
+                        d++;
+					}
+			}
+		}
+		printf("9000BTU: %d\n", a);
+		printf("12000BTU: %d\n",b);
+		printf("18000BTU: %d\n",c);
+		printf("21000BTU: %d\n",d);
 		break;
 
 		

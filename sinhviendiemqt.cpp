@@ -133,7 +133,15 @@ case 1:
 					}
                 }
                 cnt=tmp;
-                    
+                    do {
+                    printf("Do you want to enter more teams? (1=Yes, 0=No) ");
+                    scanf("%d", &add_more);
+                    if (add_more == 1) {
+                        nhap1(&x[cnt]);
+                        cnt++;
+                    }
+                } while (add_more != 0);
+                break;
               break;
               
 	case 2:

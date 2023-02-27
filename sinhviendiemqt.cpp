@@ -88,6 +88,7 @@ int cnt=0;
 int choice;
  int tmp;
  int l;
+ int add_more;
  do {
   
 printf("Student Menu\n");
@@ -136,8 +137,9 @@ case 1:
                     do {
                     printf("Do you want to enter more teams? (1=Yes, 0=No) ");
                     scanf("%d", &add_more);
+                    getchar();
                     if (add_more == 1) {
-                        nhap1(&x[cnt]);
+                        nhap(&x[cnt]);
                         cnt++;
                     }
                 } while (add_more != 0);
